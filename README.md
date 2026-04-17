@@ -1,97 +1,97 @@
 # Nyx Bot
-Um bot de Discord desenvolvido para tocar músicas e playlists diretamente do YouTube. O bot utiliza a interface moderna do Discord através de Slash Commands (comandos de barra).
-## Funcionalidades
-Reprodução do YouTube: Suporte para tocar músicas diretamente de links ou buscas do YouTube.
+A Discord bot developed to play music and playlists directly from YouTube. The bot utilizes Discord's modern interface through Slash Commands.
 
-Suporte a Playlists: Capacidade de carregar e enfileirar playlists completas do YouTube.
+## Features
+**YouTube Playback:** Support for playing music directly from YouTube links or searches.
 
-Slash Commands: Interação nativa com o Discord digitando /, o que facilita a visualização dos comandos disponíveis sem a necessidade de prefixos customizados.
+**Playlist Support:** Ability to load and queue complete YouTube playlists.
 
-Fila de Músicas: Sistema de gerenciamento de fila (pular, pausar, retomar, parar).
+**Slash Commands:** Native interaction with Discord by typing /, which makes it easy to view available commands without the need for custom prefixes.
 
-## Dependencias
-Para que o bot funcione corretamente, baixe o áudio e transmita para os canais de voz, é necessário instalar as seguintes ferramentas no seu ambiente.
+**Music Queue:** Queue management system (skip, pause, resume, stop).
 
-### Bibliotecas Python
-Abra o seu terminal e utilize o gerenciador de pacotes pip para instalar a API do Discord e o extrator de áudio do YouTube (yt-dlp):
+## Dependencies
+For the bot to work properly, download audio, and transmit it to voice channels, you must install the following tools in your environment.
+
+### Python Libraries
+Open your terminal and use the pip package manager to install the Discord API and the YouTube audio extractor (yt-dlp):
 
 ```
 pip install discord.py yt-dlp
 ```
-### FFmpeg
-O FFmpeg é um software externo obrigatório para codificar e processar a faixa de áudio antes de enviá-la aos servidores de voz do Discord. Ele deve ser instalado diretamente no seu sistema operacional:
+**FFmpeg**
+FFmpeg is a mandatory external software to encode and process the audio track before sending it to Discord's voice servers. It must be installed directly on your operating system:
 
-Windows:
+**Windows:** 
+```
+Download the binary files from the official FFmpeg website.
+Extract the contents and add the path to the bin folder to your system's Environment Variables (PATH).
+```
+**Linux (Debian/Ubuntu):** 
 
-Baixe os arquivos binários no site oficial do FFmpeg.
-
-Extraia o conteúdo e adicione o caminho da pasta bin nas Variáveis de Ambiente (PATH) do seu sistema.
-
-Linux (Debian/Ubuntu):
 ```
 sudo apt update
 sudo apt install ffmpeg
 ```
-macOS (Homebrew):
+**macOS (Homebrew):** 
+
 ```
 brew install ffmpeg
 ```
-## Como Configurar e Usar
-Siga os passos abaixo para registrar o seu bot no Discord, configurar as credenciais e executá-lo no seu servidor.
+## How to Configure and Use
+Follow the steps below to register your bot on Discord, configure the credentials, and run it on your server.
 
-### 1. Criar o Bot no Discord Developer Portal
-Para que o bot funcione, você precisa de um aplicativo registrado no Discord.
+### 1. Create the Bot on the Discord Developer Portal
+For the bot to work, you need a registered application on Discord.
 
-Acesse o Discord Developer Portal.
+Access the Discord Developer Portal.
 
-Clique no botão New Application no canto superior direito.
+Click the New Application button in the top right corner.
 
-Dê um nome ao seu bot, aceite os termos e clique em Create.
+Give your bot a name, accept the terms, and click Create.
 
-No menu lateral esquerdo, vá até a aba Bot.
+In the left side menu, go to the Bot tab.
 
-(Opcional, mas recomendado) Na seção Privileged Gateway Intents, ative as opções Message Content Intent e Server Members Intent, depois salve as alterações.
+(Optional, but recommended) In the Privileged Gateway Intents section, enable the Message Content Intent and Server Members Intent options, then save the changes.
 
-Na seção Token, clique em Reset Token e depois em Copy para copiar a chave do seu bot. Nunca compartilhe esta chave publicamente.
+In the Token section, click Reset Token and then Copy to copy your bot's key. Never share this key publicly.
 
-### 2. Convidar o Bot para o seu Servidor
-Você precisa gerar um link de convite com as permissões corretas para adicionar o bot ao seu servidor.
+### 2. Invite the Bot to your Server
+You need to generate an invite link with the correct permissions to add the bot to your server.
 
-Ainda no Developer Portal, vá até a aba OAuth2 e depois em URL Generator no menu lateral.
+Still in the Developer Portal, go to the OAuth2 tab and then URL Generator in the side menu.
 
-Na seção Scopes, marque as seguintes caixas:
+In the Scopes section, check the following boxes:
 ```
 bot
-
-applications.commands (Essencial para os Slash Commands funcionarem)
+applications.commands (Essential for Slash Commands to work)
 ```
-Uma nova seção chamada Bot Permissions aparecerá logo abaixo. Marque as permissões mínimas necessárias:
+A new section called Bot Permissions will appear just below. Check the minimum necessary permissions:
 ```
 Text Permissions: Send Messages, Read Message History, Use Slash Commands.
-
 Voice Permissions: Connect, Speak.
 ```
-Copie a URL gerada no final da página.
+Copy the URL generated at the bottom of the page.
 
-Cole a URL no seu navegador, selecione o servidor desejado e autorize o bot.
+Paste the URL into your browser, select the desired server, and authorize the bot.
 
-### 3. Configurar o Arquivo .env
-Com o bot no servidor e o Token em mãos, configure o ambiente de desenvolvimento local.
+### 3. Configure the .env File
+With the bot on the server and the Token in hand, configure the local development environment.
 
-Clone este repositório para a sua máquina local.
+Clone this repository to your local machine.
 
-Na raiz da pasta do projeto, crie um arquivo chamado exatamente .env.
+In the root of the project folder, create a file named exactly .env.
 
-Abra o arquivo .env e adicione a seguinte linha, colando o token que você copiou no Passo 1:
+Open the .env file and add the following line, pasting the token you copied in Step 1:
 ```
-DISCORD_TOKEN="sua_bot_key_aqui"
+DISCORD_TOKEN="your_bot_key_here"
 ```
-### 4. Executar o Bot
-Com as variáveis de ambiente configuradas, você já pode iniciar o sistema.
+### 4. Run the Bot
+With the environment variables configured, you can now start the system.
 
-Certifique-se de ter instalado as dependências necessárias do projeto.
+Make sure you have installed the necessary project dependencies.
 
-Execute o arquivo principal da aplicação.
+Run the main application file.
 
 ```
 python main.py
