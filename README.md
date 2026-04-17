@@ -64,7 +64,7 @@ Com as variáveis de ambiente configuradas, você já pode iniciar o sistema.
 
 Certifique-se de ter instalado as dependências necessárias do projeto.
 
-Execute o arquivo principal da aplicação. Dependendo da linguagem utilizada no seu projeto, o comando será:
+Execute o arquivo principal da aplicação.
 
 ```
 python main.py
