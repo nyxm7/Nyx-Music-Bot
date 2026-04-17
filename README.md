@@ -9,6 +9,33 @@ Slash Commands: Interação nativa com o Discord digitando /, o que facilita a v
 
 Fila de Músicas: Sistema de gerenciamento de fila (pular, pausar, retomar, parar).
 
+## Dependencias
+Para que o bot funcione corretamente, baixe o áudio e transmita para os canais de voz, é necessário instalar as seguintes ferramentas no seu ambiente.
+
+### Bibliotecas Python
+Abra o seu terminal e utilize o gerenciador de pacotes pip para instalar a API do Discord e o extrator de áudio do YouTube (yt-dlp):
+
+```
+pip install discord.py yt-dlp
+```
+### FFmpeg
+O FFmpeg é um software externo obrigatório para codificar e processar a faixa de áudio antes de enviá-la aos servidores de voz do Discord. Ele deve ser instalado diretamente no seu sistema operacional:
+
+Windows:
+
+Baixe os arquivos binários no site oficial do FFmpeg.
+
+Extraia o conteúdo e adicione o caminho da pasta bin nas Variáveis de Ambiente (PATH) do seu sistema.
+
+Linux (Debian/Ubuntu):
+```
+sudo apt update
+sudo apt install ffmpeg
+```
+macOS (Homebrew):
+```
+brew install ffmpeg
+```
 ## Como Configurar e Usar
 Siga os passos abaixo para registrar o seu bot no Discord, configurar as credenciais e executá-lo no seu servidor.
 
